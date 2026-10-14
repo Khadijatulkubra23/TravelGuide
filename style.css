@@ -329,3 +329,14 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+#saved-list li { align-items: center; }
+.remove-btn {
+  padding: 0.25rem 0.75rem;
+  font: 600 0.85rem var(--font-head);
+  color: var(--mocha-dark);
+  background: transparent;
+  border: 2px solid var(--mocha-dark);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.remove-btn:hover { background: rgba(165, 133, 111, 0.2); }
