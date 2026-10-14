@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderly | Travel Guide</title>
+  <meta name="description" content="Browse, filter, and save travel destinations. A responsive travel guide built with HTML, CSS, and JavaScript.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <a class="logo" href="#top">Wanderly</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-menu" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#destinations">Explore</a></li>
+        <li><a href="#saved">Saved</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title">Find your next adventure</h1>
+        <p>Browse destinations, filter by the kind of trip you want, and save your favorites for later.</p>
+        <form class="search" role="search">
+          <label for="search-input" class="sr-only">Search destinations</label>
+          <input id="search-input" type="search" placeholder="Search by name or country" autocomplete="off">
+        </form>
+      </div>
+      <img class="hero-img" src="images/hero.jpg" alt="Traveler looking over a mountain valley at sunrise" width="1200" height="800" fetchpriority="high">
+    </section>
+
+    <section id="destinations" aria-labelledby="destinations-title">
+      <h2 id="destinations-title">Popular destinations</h2>
+      <div class="filters" role="group" aria-label="Filter destinations by category">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="beach" aria-pressed="false">Beach</button>
+        <button type="button" data-filter="mountains" aria-pressed="false">Mountains</button>
+        <button type="button" data-filter="city" aria-pressed="false">City</button>
+        <button type="button" data-filter="culture" aria-pressed="false">Culture</button>
+      </div>
+
+      <div class="card-grid" id="card-grid">
+        <article class="card" data-category="beach" data-name="Maldives">
+          <img src="images/maldives.jpg" alt="Overwater villas above turquoise water in the Maldives" width="800" height="600" loading="lazy">
+          <div class="card-body">
+            <h3>Maldives</h3>
+            <p class="card-meta">Indian Ocean · Best in Nov to Apr</p>
+            <p class="card-budget">Budget: $$$</p>
+            <button class="save-btn" type="button" aria-pressed="false" aria-label="Save Maldives">Save</button>
+          </div>
+        </article>
+
+        <article class="card" data-category="beach" data-name="Santorini">
+          <img src="images/santorini.jpg" alt="White buildings with blue domes overlooking the sea in Santorini" width="800" height="600" loading="lazy">
+          <div class="card-body">
+            <h3>Santorini</h3>
+            <p class="card-meta">Greece · Best in May to Oct</p>
+            <p class="card-budget">Budget: $$$</p>
+            <button class="save-btn" type="button" aria-pressed="false" aria-label="Save Santorini">Save</button>
+          </div>
+        </article>
+
+        <article class="card" data-category="mountains" data-name="Hunza Valley">
+          <img src="images/hunza.jpg" alt="Green valley surrounded by snow-capped peaks in Hunza" width="800" height="600" loading="lazy">
+          <div class="card-body">
+            <h3>Hunza Valley</h3>
+            <p class="card-meta">Pakistan · Best in Apr to Oct</p>
+            <p class="card-budget">Budget: $$</p>
+            <button class="save-btn" type="button" aria-pressed="false" aria-label="Save Hunza Valley">Save</button>
+          </div>
+        </article>
+
+        <article class="card" data-category="city" data-name="Tokyo">
+          <img src="images/tokyo.jpg" alt="Tokyo skyline with tall buildings lit up at dusk" width="800" height="600" loading="lazy">
+          <div class="card-body">
+            <h3>Tokyo</h3>
+            <p class="card-meta">Japan · Best in Mar to May</p>
+            <p class="card-budget">Budget: $$$</p>
+            <button class="save-btn" type="button" aria-pressed="false" aria-label="Save Tokyo">Save</button>
+          </div>
+        </article>
+
+        <article class="card" data-category="culture" data-name="Kyoto">
+          <img src="images/kyoto.jpg" alt="Traditional temple with red gates surrounded by trees in Kyoto" width="800" height="600" loading="lazy">
+          <div class="card-body">
+            <h3>Kyoto</h3>
+            <p class="card-meta">Japan · Best in Oct to Nov</p>
+            <p class="card-budget">Budget: $$</p>
+            <button class="save-btn" type="button" aria-pressed="false" aria-label="Save Kyoto">Save</button>
+          </div>
+        </article>
+
+        <article class="card" data-category="culture" data-name="Istanbul">
+          <img src="images/istanbul.jpg" alt="Mosque domes and minarets along the Bosphorus in Istanbul" width="800" height="600" loading="lazy">
+          <div class="card-body">
+            <h3>Istanbul</h3>
+            <p class="card-meta">Turkey · Best in Apr to Jun</p>
+            <p class="card-budget">Budget: $$</p>
+            <button class="save-btn" type="button" aria-pressed="false" aria-label="Save Istanbul">Save</button>
+          </div>
+        </article>
+      </div>
+
+      <p id="no-results" hidden>No destinations match your search. Try another name or category.</p>
+    </section>
+
+    <section id="saved" aria-labelledby="saved-title">
+      <h2 id="saved-title">Saved trips (<span id="saved-count">0</span>)</h2>
+      <p id="saved-empty">Nothing saved yet. Tap Save on a destination to add it here.</p>
+      <ul id="saved-list" aria-live="polite"></ul>
+    </section>
+  </main>
+
+  <footer id="about">
+    <p>Wanderly is a student project built with HTML, CSS, and JavaScript.</p>
+    <p><small>&copy; 2026 Wanderly</small></p>
+  </footer>
+</body>
+</html>
