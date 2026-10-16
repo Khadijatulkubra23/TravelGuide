@@ -66,6 +66,7 @@ function renderSaved() {
     const btn = card.querySelector(".save-btn");
     const isSaved = saved.includes(card.dataset.name);
     btn.setAttribute("aria-pressed", isSaved);
+     btn.setAttribute("aria-label", `${isSaved ? "Saved" : "Save"} ${card.dataset.name}`);
     btn.textContent = isSaved ? "Saved" : "Save";
   });
   storeSaved();

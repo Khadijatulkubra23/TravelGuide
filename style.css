@@ -18,6 +18,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
 
 body {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   font-family: var(--font-body);
@@ -143,6 +144,7 @@ main > section:not(.hero) { padding: 2.5rem 1.25rem; }
 
 .hero {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.5rem;
   margin: 1rem 1.25rem;
   padding: 1.5rem;
@@ -197,7 +199,11 @@ main > section:not(.hero) { padding: 2.5rem 1.25rem; }
   background: var(--mocha);
 }
 
-.card-grid { display: grid; gap: 1.25rem; }
+.card-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.25rem;
+}
 
 .card {
   position: relative;
@@ -267,6 +273,7 @@ main > section:not(.hero) { padding: 2.5rem 1.25rem; }
 #saved-list { display: grid; gap: 0.5rem; }
 #saved-list li {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   padding: 0.75rem 1rem;
@@ -275,6 +282,17 @@ main > section:not(.hero) { padding: 2.5rem 1.25rem; }
   border-radius: 12px;
 }
 #saved-empty, #no-results { color: var(--mocha-dark); }
+
+.remove-btn {
+  padding: 0.25rem 0.75rem;
+  font: 600 0.85rem var(--font-head);
+  color: var(--mocha-dark);
+  background: transparent;
+  border: 2px solid var(--mocha-dark);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.remove-btn:hover { background: rgba(165, 133, 111, 0.2); }
 
 footer {
   display: grid;
@@ -311,7 +329,7 @@ footer {
   .site-nav a { padding: 0.5rem 0; }
   .hero { padding: 2rem; }
   .filters { flex-wrap: wrap; overflow: visible; }
-  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (min-width: 1024px) {
@@ -323,20 +341,9 @@ footer {
   }
   main > section:not(.hero) { padding-inline: 2rem; }
   #saved { margin-inline: 2rem; padding: 2rem; }
-  .card-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
-#saved-list li { align-items: center; }
-.remove-btn {
-  padding: 0.25rem 0.75rem;
-  font: 600 0.85rem var(--font-head);
-  color: var(--mocha-dark);
-  background: transparent;
-  border: 2px solid var(--mocha-dark);
-  border-radius: 999px;
-  cursor: pointer;
-}
-.remove-btn:hover { background: rgba(165, 133, 111, 0.2); }
