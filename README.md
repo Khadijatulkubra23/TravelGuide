@@ -2,8 +2,6 @@
 
 A mobile-first travel guide where you can browse, filter, search, and save destinations. Built with plain HTML, CSS, and JavaScript, with no frameworks, as Project 1 of the DecodeLabs Full Stack Development internship.
 
-**Live site:** https://YOUR-USERNAME.github.io/travel-guide/
-
 ## Features
 - Fully responsive layout (mobile, tablet at 768px, desktop at 1024px)
 - Category filters and live search that work together
